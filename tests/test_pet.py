@@ -1,5 +1,8 @@
 import pytest
 from src.virtualpet.pet import VirtualPet
+from unittest.mock import patch
+import io
+import sys
 
 def test_feed_pet():
     """Test feed_pet() functionality comprehensively"""
@@ -39,6 +42,29 @@ def test_feed_sleeping_pet():
     assert pet.happiness == initial_happiness, "Sleeping pet's happiness shouldn't change"
     assert pet.cleanness == initial_cleanness, "Sleeping pet's cleanness shouldn't change"
 
+def test_pet_sleep():
+    """Test pet_sleep() functionality to simulate pet sleeping and waking up."""
+    pet = VirtualPet("TestPet")
+
+    # Setup to capture print statements
+    capturedOutput = io.StringIO()          # Create StringIO object
+    sys.stdout = capturedOutput             # Redirect stdout.
+
+    # Mock sleep to prevent actual sleep delay
+    with patch('time.sleep', return_value=None) as mock_sleep:
+        pet.pet_sleep()
+        
+    # Reset redirect.
+    sys.stdout = sys.__stdout__             
+
+    # Check outputs
+    assert "is going to sleep..." in capturedOutput.getvalue(), "Should indicate going to sleep"
+    assert "woke up after" in capturedOutput.getvalue(), "Should indicate waking up"
+
+    # Check that time.sleep was called
+    mock_sleep.assert_called()
+
+    
 def test_exit():
     """Test basic exit functionality"""
     pet = VirtualPet("TestPet")
