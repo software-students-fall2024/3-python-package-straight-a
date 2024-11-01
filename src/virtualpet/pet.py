@@ -1,4 +1,6 @@
 from typing import Literal
+import random
+import time
 
 class VirtualPet: 
     _HAPPINESS_EMOJIS = {
@@ -75,3 +77,11 @@ class VirtualPet:
         self.dirty_command_count = 0
         print(f"{self.name} has taken a shower and is now clean!")
         self._display_status()
+
+    def pet_sleep(self):
+        print(f"{self.name} is going to sleep...")
+        self.is_sleeping = True 
+        sleep_time = random.randint(20, 25) 
+        time.sleep(sleep_time)
+        self.is_sleeping = False 
+        print(f"{self.name} has already woke up after {sleep_time} seconds of sleep!")
