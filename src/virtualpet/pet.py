@@ -49,7 +49,7 @@ class VirtualPet:
         print(f"{self.name} is going to sleep...")
         sleep_time = random.randint(20, 25) 
         time.sleep(sleep_time)
-        print(f"{self.name} woke up after {sleep_time} seconds of sleep!")
+        print(f"{self.name} has already woke up after {sleep_time} seconds of sleep!")
 
 
     def feed_pet(self):
