@@ -12,22 +12,31 @@ def test_feed_pet():
     assert pet.happiness == 10, "Initial happiness should be 10"
     assert pet.cleanness == 10, "Initial cleanness should be 10"
     
-    # Test feeding multiple times and check values
+    # Test feeding multiple times while clean
     pet.feed_pet()
     assert pet.happiness == 10, "Happiness should stay at 10 (max)"
     assert pet.cleanness == 8, "Cleanness should decrease by 2"
     
-    # Test feeding until pet gets dirty
+    # Test feeding until pet gets dirty (cleanness < 3)
     for _ in range(3):  # Feed 3 more times
         pet.feed_pet()
     
+    # After 4 feedings: cleanness started at 10, decreased by 2 each time
     assert pet.cleanness == 2, "Cleanness should be 2 after 4 feedings"
     assert pet.dirty_command_count == 1, "Should have 1 dirty command"
+    assert pet.happiness == 9, "Happiness should decrease by 1 when dirty"
     
-    # Test feeding with minimum cleanness
+    # Test feeding when already dirty
     pet.feed_pet()
     assert pet.cleanness == 1, "Cleanness shouldn't go below 1"
     assert pet.dirty_command_count == 2, "Should have 2 dirty commands"
+    assert pet.happiness == 8, "Happiness should continue decreasing when dirty"
+    
+    # Feed several more times to test happiness decrease
+    for _ in range(3):
+        pet.feed_pet()
+    assert pet.happiness == 5, "Happiness should decrease by 1 each feeding when dirty"
+
 
 def test_feed_sleeping_pet():
     """Test feeding a sleeping pet"""
@@ -41,6 +50,18 @@ def test_feed_sleeping_pet():
     
     assert pet.happiness == initial_happiness, "Sleeping pet's happiness shouldn't change"
     assert pet.cleanness == initial_cleanness, "Sleeping pet's cleanness shouldn't change"
+
+def test_happiness_minimum():
+    """Test that happiness doesn't go below 1"""
+    pet = VirtualPet("TestPet")
+    # Make pet dirty first
+    for _ in range(4):
+        pet.feed_pet()
+    
+    # Feed multiple times when dirty to test minimum happiness
+    for _ in range(10):
+        pet.feed_pet()
+    assert pet.happiness == 1, "Happiness shouldn't go below 1"
 
 def test_exit():
     """Test basic exit functionality"""
