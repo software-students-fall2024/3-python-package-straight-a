@@ -24,18 +24,22 @@ def test_feed_pet():
     # After 4 feedings: cleanness started at 10, decreased by 2 each time
     assert pet.cleanness == 2, "Cleanness should be 2 after 4 feedings"
     assert pet.dirty_command_count == 1, "Should have 1 dirty command"
-    assert pet.happiness == 9, "Happiness should decrease by 1 when dirty"
+    assert pet.happiness == 10, "Happiness should not decrease yet"
     
-    # Test feeding when already dirty
+    # Test feeding when already dirty - second dirty command
     pet.feed_pet()
     assert pet.cleanness == 1, "Cleanness shouldn't go below 1"
     assert pet.dirty_command_count == 2, "Should have 2 dirty commands"
-    assert pet.happiness == 8, "Happiness should continue decreasing when dirty"
+    assert pet.happiness == 10, "Happiness should not decrease until 3 dirty commands"
     
-    # Feed several more times to test happiness decrease
-    for _ in range(3):
-        pet.feed_pet()
-    assert pet.happiness == 5, "Happiness should decrease by 1 each feeding when dirty"
+    # Feed one more time to reach 3 dirty commands
+    pet.feed_pet()
+    assert pet.happiness == 9, "Happiness should decrease after 3 dirty commands"
+    assert pet.dirty_command_count == 3, "Should have 3 dirty commands"
+    
+    # Feed one more time to verify continued happiness decrease
+    pet.feed_pet()
+    assert pet.happiness == 8, "Happiness should continue decreasing when dirty"
 
 
 def test_feed_sleeping_pet():
