@@ -10,6 +10,7 @@ authors = [
   { name="Foo Barstein", email="foo.barstein@onepotcooking.com" },
   { name="Applejam-ovo", email="ql2138@nyu.edu" },
   { name="ElaineR02", email="pl2355nyu.edu" }
+  { name="HannahLiang627", email="zl3927@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
