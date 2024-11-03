@@ -35,9 +35,9 @@ class VirtualPet:
     def _check_cleanness(self):
         if self.cleanness < 3:
             self.dirty_command_count += 1
+            print(f"Warning: You need to give {self.name} a shower!")
             if self.dirty_command_count >= 5:
                 self.happiness = max(1, self.happiness - 1)
-                print(f"Warning: You need to give {self.name} a shower!")
         else:
             self.dirty_command_count = 0
     
@@ -51,7 +51,12 @@ class VirtualPet:
             print(f"{self.name} is sleeping!")
             return
         
-        self.happiness = min(10, self.happiness + 1)
+        if self.cleanness >= 3:
+            # Increase happiness when clean
+            self.happiness = min(10, self.happiness + 1)
+        else:
+            # Decrease happiness when dirty
+            self.happiness = max(1, self.happiness - 1)
         self.cleanness = max(1, self.cleanness - 2)
         self._check_cleanness()
         self._display_status()
