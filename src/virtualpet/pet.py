@@ -79,10 +79,11 @@ class VirtualPet:
         self._display_status()
 
     def pet_sleep(self):
-        print(f"{self.name} is going to sleep...")
+        print(f"{self.name} is going to have a sweet dream. You are the best!")
         self.is_sleeping = True 
+        self._display_status()
         sleep_time = random.randint(20, 25) 
-        wake_up_prompt = input(f"{self.name} is now sleeping. Do you want to wake it up? (y/n): ").strip().lower()
+        wake_up_prompt = input(f"{self.name} is now sleeping. Do you want to wake {self.name} up? (y/n): ").strip().lower()
         if wake_up_prompt == "y":
             self.is_sleeping = False
             print(f"{self.name} is now awake!")
