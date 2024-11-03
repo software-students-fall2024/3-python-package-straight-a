@@ -7,11 +7,12 @@ name = "virtualpet"
 description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
 version = "0.1.0"
 authors = [
-  { name="Foo Barstein", email="foo.barstein@onepotcooking.com" },
+  { name="ritaziruihe", email="zh2266@nyu.edu" },
   { name="Applejam-ovo", email="ql2138@nyu.edu" },
-  { name="ElaineR02", email="pl2355nyu.edu" }
+  { name="ElaineR02", email="pl2355@nyu.edu" }, 
   { name="HannahLiang627", email="zl3927@nyu.edu" }
 ]
+
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["python", "package", "build", "tutorial"]
@@ -32,3 +33,4 @@ dev = ["pytest"]
 "Bug Tracker" = "https://github.com/software-students-fall2024/3-python-package-straight-a/issues"
 
 [project.scripts]
+virtualpet = "virtualpet.use_virtual_pet:main"
