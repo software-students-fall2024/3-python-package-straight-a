@@ -51,13 +51,16 @@ class VirtualPet:
             print(f"{self.name} is sleeping!")
             return
         
-        if self.cleanness >= 3:
-            # Increase happiness when clean
-            self.happiness = min(10, self.happiness + 1)
-        else:
-            # Decrease happiness when dirty
-            self.happiness = max(1, self.happiness - 1)
+        # Update cleanness first
         self.cleanness = max(1, self.cleanness - 2)
+        
+        # If cleanness is below 3 and not about to trigger _check_cleanness decrease
+        if self.cleanness < 3 and self.dirty_command_count < 4:  # Will become 5 after _check_cleanness
+            self.happiness = max(1, self.happiness - 1)
+        elif self.cleanness >= 3:
+            # Only increase happiness if we're still clean
+            self.happiness = min(10, self.happiness + 1)
+        
         self._check_cleanness()
         self._display_status()
 
