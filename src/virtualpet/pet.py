@@ -82,9 +82,15 @@ class VirtualPet:
         print(f"{self.name} is going to sleep...")
         self.is_sleeping = True 
         sleep_time = random.randint(20, 25) 
-        time.sleep(sleep_time)
-        self.is_sleeping = False 
-        print(f"{self.name} has already woke up after {sleep_time} seconds of sleep!")
+        wake_up_prompt = input(f"{self.name} is now sleeping. Do you want to wake it up? (y/n): ").strip().lower()
+        if wake_up_prompt == "y":
+            self.is_sleeping = False
+            print(f"{self.name} is now awake!")
+        else:  
+            print(f"{self.name} will sleep ...")  
+            time.sleep(sleep_time)
+            self.is_sleeping = False 
+            print(f"{self.name} has already woke up after {sleep_time} seconds of sleep!")
 
     ###
     def play_with_pet(self, action: Literal['hug', 'pet', 'kiss']):

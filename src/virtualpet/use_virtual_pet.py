@@ -1,6 +1,6 @@
 # use_virtual_pet.py
 
-from src.virtualpet.pet import VirtualPet
+from virtualpet.pet import VirtualPet
 
 def main():
     # Create a new virtual pet instance
@@ -12,7 +12,7 @@ def main():
     while pet.active:
         action = input(
             "\nWhat would you like to do with your pet? "
-            "(Options: feed/play/take shower/check status/sleep/wake up/exit): "
+            "(Options: feed/play/take shower/check status/sleep/restart/exit): "
         ).strip().lower()
 
         if action == "feed":
@@ -36,13 +36,6 @@ def main():
                 print(f"{pet.name} is already sleeping!")
             else:
                 pet.pet_sleep()
-       
-        elif action == "wake up":
-            if pet.is_sleeping:
-                pet.is_sleeping = False
-                print(f"{pet.name} is now awake!")
-            else:
-                print(f"{pet.name} is already awake.")
 
         elif action == "restart":
             pet.restart()
