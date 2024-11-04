@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c9536e4c8f1b9f784beef8d0b657bede19910444456063b8311281028c15a5e0"
+            "sha256": "894a3d46dee25d49a4ec3a27d58e3f82ec4db9d7ac36a6f43199b3eadc1201af"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -359,9 +359,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==2.2.3"
         },
-        "virtualpet": {
-            "editable": true,
-            "path": "."
+        "virtualpet-game": {
+            "hashes": [
+                "sha256:2ee92251153e387e9d416d9be4ecf78274a6ae9fe31505570afee8cab74faa2e",
+                "sha256:39dfb73457566d3714277d8018caba97f7efaf6b88ecb813f6965b71cefe0af3"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==0.1.1"
         },
         "zipp": {
             "hashes": [
