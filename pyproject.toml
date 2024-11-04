@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "virtualpet-game"
 description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="ritaziruihe", email="zh2266@nyu.edu" },
   { name="Applejam-ovo", email="ql2138@nyu.edu" },
