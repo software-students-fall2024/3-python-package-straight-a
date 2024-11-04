@@ -8,6 +8,7 @@ pytest = "*"
 build = "*"
 twine = "*"
 virtualpet = {path = ".", editable = true}
+virtualpet-game = "*"
 
 [dev-packages]
 pytest = "*"
