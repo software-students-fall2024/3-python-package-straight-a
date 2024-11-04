@@ -77,37 +77,37 @@ pet._display_status()
 You can see how to use all of the functions in an example Python program: [Example Python Program](use_virtual_pet.py)
 
 **Example of Use**
-Here is a snippet from the `use_virtual_pet.py` file:
-```bash
-from virtualpet.pet import VirtualPet
+- Here is a snippet from the `use_virtual_pet.py` file:
+  ```bash
+  from virtualpet.pet import VirtualPet
 
-def main():
-    pet_name = input("What would you like to name your pet? ")
-    pet = VirtualPet(pet_name)
+  def main():
+      pet_name = input("What would you like to name your pet? ")
+      pet = VirtualPet(pet_name)
 
-    while pet.active:
-        action = input("(Options: feed/play/take shower/check status/sleep/restart/exit): ").strip().lower()
-        if action == "feed":
-            pet.feed_pet()
-        elif action == "play":
-            sub_action = input("Choose how to play with your pet (hug/pet/kiss): ").strip().lower()
-            pet.play_with_pet(sub_action)
-        elif action == "take shower":
-            pet.take_shower()
-        elif action == "check status":
-            pet._display_status()
-        elif action == "sleep":
-            pet.pet_sleep()
-        elif action == "restart":
-            pet.restart()
-        elif action == "exit":
-            pet.exit()
-        else:
-            print("Invalid action. Please choose a valid action.")
+      while pet.active:
+          action = input("(Options: feed/play/take shower/check status/sleep/restart/exit): ").strip().lower()
+          if action == "feed":
+              pet.feed_pet()
+          elif action == "play":
+              sub_action = input("Choose how to play with your pet (hug/pet/kiss): ").strip().lower()
+              pet.play_with_pet(sub_action)
+          elif action == "take shower":
+              pet.take_shower()
+          elif action == "check status":
+              pet._display_status()
+          elif action == "sleep":
+              pet.pet_sleep()
+          elif action == "restart":
+              pet.restart()
+          elif action == "exit":
+              pet.exit()
+          else:
+              print("Invalid action. Please choose a valid action.")
 
-if __name__ == "__main__":
-    main()
-```
+  if __name__ == "__main__":
+      main()
+  ```
 
 ## Steps necessary to run the software(for Development)
 
