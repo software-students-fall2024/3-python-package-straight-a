@@ -69,11 +69,13 @@ pet.restart()
 pet.exit()
 ```
 `_display_status()`: Display your pet's current happiness, cleanness, and state with a cute emoji representation. 
-Note: `_display_status()` is used internally, but you can call it directly to check the current status.
+
+**Note**: `_display_status()` is used internally, but you can call it directly to check the current status.
 ```bash
 pet._display_status()
 ```
 You can see how to use all of the functions in an example Python program: [Example Python Program](use_virtual_pet.py)
+
 **Example of Use**
 Here is a snippet from the `use_virtual_pet.py` file:
 ```bash
