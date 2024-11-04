@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "virtualpet"
+name = "virtualpet-game"
 description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="ritaziruihe", email="zh2266@nyu.edu" },
   { name="Applejam-ovo", email="ql2138@nyu.edu" },

@@ -1,5 +1,7 @@
 # Python Package Exercise - Virtual Pet 🐾
-[![log github events](https://github.com/software-students-fall2024/3-python-package-straight-a/actions/workflows/event-logger.yml/badge.svg)](https://github.com/software-students-fall2024/3-python-package-straight-a/actions/workflows/event-logger.yml)
+[![log github events](https://github.com/software-students-fall2024/3-python-package-straight-a/actions/workflows/event-logger.yml/badge.svg)](https://github.com/software-students-fall2024/3-python-package-straight-a/actions/workflows/event-logger.yml)     
+
+[![Link to PyPI](https://pypi.org/project/virtualpet-game/)](https://pypi.org/project/virtualpet-game/)
 
 ## Description
 
@@ -10,7 +12,9 @@
 1. **Set Up a Virtual Environment and Install the Package**：
    - Create a pipenv-managed virtual environment and install your package:
    Run the following command to install the virtualpet package from TestPyPI:
-   pypi to be updated...
+    ```bash
+     pipenv install virtualpet-game
+     ```
    - Activate the Virtual Environment:
      ```bash
      pipenv shell
@@ -24,7 +28,7 @@
 3. **Run the Package Directly from the Command Line**;
    - Set up and activate the pipenv virtual environment as before:
      ```bash
-     pipenv install -i https://test.pypi.org/simple/ virtualpet==0.1.0
+     pipenv install virtualpet-game
      pipenv shell
      ```
    - Run the Package Directly:
